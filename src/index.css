@@ -6,11 +6,11 @@
     name: "light";
     default: true;
 
-    --color-primary: #ff3e66;
-    --color-secondary: #03193093;
+    --color-primary: #fb7a00;
+    --color-secondary: #0d3642;
     --color-base-100: #F5F5F5;
     --color-base-200: #FFFFFF;
-    --color-accent: #333333;
+  
 
     --color-accent-content: oklch(98% 0.01 160);
     --color-neutral: oklch(50% 0.05 240);

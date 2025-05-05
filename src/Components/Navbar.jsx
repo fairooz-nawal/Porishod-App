@@ -4,21 +4,21 @@ import logo from '../assets/logo2.jpg'
 const Navbar = () => {
     const link = <>
         <li><NavLink className={({ isActive }) =>
-            isActive ? "bg-primary text-white hover:bg-red-600 ml-2 font-semibold" : "text-accent hover:bg-red-600 hover:text-white ml-2 font-semibold"
+            isActive ? "bg-primary text-white hover:bg-yellow-400 ml-2 font-semibold" : "text-gray-300 hover:bg-yellow-600 hover:text-white ml-2 font-semibold"
         } to="/">Home</NavLink></li>
         <li><NavLink className={({ isActive }) =>
-            isActive ? "bg-primary text-white hover:bg-red-600 ml-2 font-semibold" : "text-accent hover:bg-red-600 hover:text-white ml-2 font-semibold"
+            isActive ? "bg-primary text-gray-300 hover:bg-yellow-400 ml-2 font-semibold" : "text-gray-300 hover:bg-yellow-600 hover:text-white ml-2 font-semibold"
         } to="/bill">Bill</NavLink></li>
         <li><NavLink className={({ isActive }) =>
-            isActive ? "bg-primary text-white hover:bg-red-600 ml-2 font-semibold" : "text-accent hover:bg-red-600 hover:text-white ml-2 font-semibold"
+            isActive ? "bg-primary text-gray-300 hover:bg-yellow-400 ml-2 font-semibold" : "text-gray-300 hover:bg-yellow-600 hover:text-white ml-2 font-semibold"
         } to="/profile">My Profile</NavLink></li>
     </>
     return (
-        <div className="navbar bg-white text-accent shadow-sm">
+        <div className="navbar bg-secondary text-accent shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="black"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="white"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                     </div>
                     <ul
                         tabIndex={0}
@@ -26,9 +26,9 @@ const Navbar = () => {
                         {link}
                     </ul>
                 </div>
-                <div className="flex gap-2 items-center bg-white "> 
+                <div className="flex gap-2 items-center border-2 border-primary rounded-2xl p-2"> 
                     <img className='w-[40px] h-[40px] hidden md:block lg:block object-cover rounded-full overflow-hidden' src={logo} alt="" /> 
-                    <span className='font-bold text-sm md:text-2xl lg:text-2xl text-accent'>PORISHOD</span>
+                    <span className='font-bold text-3xl md:text-2xl lg:text-2xl text-gray-300'>PORISHOD</span>
                 </div>
 
             </div>
@@ -39,8 +39,8 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
-                    <Link className="btn btn-outline btn-error hover:bg-primary" to="/">Login</Link>
-                    <Link className="btn btn-outline btn-error hover:bg-primary " to="/">Registration</Link>
+                    <Link className="btn btn-outline btn-warning hover:bg-primary" to="/">Login</Link>
+                    <Link className="btn btn-outline btn-warning hover:bg-primary " to="/">Registration</Link>
                 </div>
             </div>
         </div>

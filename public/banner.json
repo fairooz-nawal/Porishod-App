@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "title": "Pay Your DESCO Bills Instantly at the Convenience of Your Home",
+      "description": "Our platform is officially trusted by DESCO, allowing you to pay your electricity bills quickly and securely from the comfort of your home. Say goodbye to long queues and late fees.",
+      "image": "https://i.ibb.co.com/gFWcxq83/banner-3.jpg",
+      "alt": "Trusted by DESCO"
+    },
+    {
+      "id": 2,
+      "title": "NESCO Bill Payment Made Easy in one Simple Click",
+      "description": "Experience effortless electricity bill payments with full NESCO integration. Manage your dues, track history, and pay instantly using your preferred payment method—all in one place.",
+      "image": "https://i.ibb.co.com/67b4NMLy/banner-4.jpg",
+      "alt": "NESCO Approved"
+    },
+    {
+      "id": 3,
+      "title": "Worry about your WASA Water Bills? We've Got You Covered",
+      "description": "Never miss another water bill deadline again. WASA now supports our billing platform, letting you pay water bills online without the hassle of manual submissions.",
+      "image": "https://i.ibb.co.com/ns6cG3R2/banner-2.webp",
+      "alt": "WASA Bill Support"
+    },
+    {
+      "id": 4,
+      "title": "All Your Bills in One Place. Easy to Pay. No Hassle",
+      "description": "Whether it's electricity, gas, internet, water, tuition fees, or credit card bills—our all-in-one solution helps you manage and pay every type of utility bill with just a few clicks.",
+      "image": "https://i.ibb.co.com/gMRHPwNm/banner-1.jpg",
+      "alt": "All utility payments in one app"
+    }
+  ]
+  
