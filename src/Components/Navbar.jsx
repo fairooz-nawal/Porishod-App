@@ -46,7 +46,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
-                    { user ? 
+                { user ? 
                     <>
                         <button><img className='w-[60px] h-[60px] object-cover rounded-full overflow-hidden' src={user?.photoURL} alt="" /></button>
                     </>
@@ -55,8 +55,7 @@ const Navbar = () => {
                         <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/login">Login</Link>
                         <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/register">Registration</Link>
                     </>
-                    }
-                    
+                    } 
                 </div>
             </div>
         </div>
