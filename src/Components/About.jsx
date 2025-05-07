@@ -6,7 +6,7 @@ import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { Slide } from "react-awesome-reveal";
 const About = () => {
     return (
-        <div className='relative h-[600px] flex  mb-[100px]'>
+        <div className='relative h-[600px] flex '>
             <div className="w-full md:w-full lg:w-1/2">
                 <Slide direction="up">
                     <img className='w-full h-[600px]' src={bg} alt="" srcset="" />
