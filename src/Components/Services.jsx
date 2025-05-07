@@ -8,7 +8,7 @@ const Services = () => {
     return (
         <div className='max-w-full md:max-w-5xl lg:max-w-7xl mx-auto p-4 text-center py-[50px] md:py-[100px] lg:py-[100px]'>
             <div className="w-full md:w-3/4 lg:w-3/4 mx-auto p-5 space-y-4">
-                <p className='text-orange-600 font-semibold text-2xl'>Our Pwerful Feature</p>
+                <p className='text-orange-600 font-semibold text-2xl'>Our Powerful Feature</p>
                 <h1 className='text-gray-800 text-2xl md:text-3xl lg:text-5xl font-bold'>Services We provide</h1>
                 <p className='text-gray-600'>Our app offers a comprehensive range of services to cater to your utility bill payments and financial needs.Pay your electricity bills (DESCO, NESCO), water bills (WASA), and other utility bills with ease. Additionally, you can also recharge your mobile phone, pay your internet bills, and settle your credit card dues.</p>
             </div>
