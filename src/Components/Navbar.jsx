@@ -4,8 +4,9 @@ import logo from '../assets/logo2.jpg'
 import { useContext } from 'react';
 import { ContextAPI } from './AuthProvider';
 const Navbar = () => {
-    const {name} = useContext(ContextAPI);
-    console.log(name)
+    
+    const { user} = useContext(ContextAPI);
+    
     const link = <>
         <li><NavLink className={({ isActive }) =>
             isActive ? "bg-primary text-white hover:bg-yellow-400 ml-2 font-semibold" : "text-gray-300 hover:bg-yellow-600 hover:text-white ml-2 font-semibold"
@@ -45,8 +46,17 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
-                    <Link className="btn btn-outline btn-warning hover:bg-primary" to="/auth/login">Login</Link>
-                    <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/register">Registration</Link>
+                    { user ? 
+                    <>
+                        <button><img className='w-[60px] h-[60px] object-cover rounded-full overflow-hidden' src={user?.photoURL} alt="" /></button>
+                    </>
+                    :
+                    <>
+                        <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/login">Login</Link>
+                        <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/register">Registration</Link>
+                    </>
+                    }
+                    
                 </div>
             </div>
         </div>
