@@ -31,6 +31,8 @@ const Navbar = () => {
                     <span className='font-bold text-3xl md:text-2xl lg:text-2xl text-gray-300'>PORISHOD</span>
                 </div>
 
+                
+
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
