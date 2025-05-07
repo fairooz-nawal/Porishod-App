@@ -45,7 +45,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
-                    <Link className="btn btn-outline btn-warning hover:bg-primary" to="/">Login</Link>
+                    <Link className="btn btn-outline btn-warning hover:bg-primary" to="/auth/login">Login</Link>
                     <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/register">Registration</Link>
                 </div>
             </div>

@@ -19,8 +19,6 @@ const Hightlight = () => {
                             start={0}
                             end={108}
                             duration={5.75}
-                            onEnd={() => console.log('Ended! 👏')}
-                            onStart={() => console.log('Started! 💨')}
                         >
                             {({ countUpRef, start }) => (
                                 <div>
@@ -39,8 +37,6 @@ const Hightlight = () => {
                             start={0}
                             end={20000}
                             duration={2.75}
-                            onEnd={() => console.log('Ended! 👏')}
-                            onStart={() => console.log('Started! 💨')}
                         >
                             {({ countUpRef, start }) => (
                                 <div>
@@ -59,8 +55,6 @@ const Hightlight = () => {
                             start={0}
                             end={500}
                             duration={4.75}
-                            onEnd={() => console.log('Ended! 👏')}
-                            onStart={() => console.log('Started! 💨')}
                         >
                             {({ countUpRef, start }) => (
                                 <div>
@@ -79,8 +73,6 @@ const Hightlight = () => {
                             start={0}
                             end={100}
                             duration={5.75}
-                            onEnd={() => console.log('Ended! 👏')}
-                            onStart={() => console.log('Started! 💨')}
                         >
                             {({ countUpRef, start }) => (
                                 <div>

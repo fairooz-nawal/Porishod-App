@@ -8,6 +8,7 @@ import Profile from '../Pages/Profile';
 import Bill from '../Pages/Bill';
 import AuthLayout from '../Layout/AuthLayout';
 import Registration from '../Pages/Registration';
+import Login from '../Pages/Login';
 
 export const router = createBrowserRouter([
   {
@@ -37,7 +38,12 @@ export const router = createBrowserRouter([
         index: true,
         path: "/auth/register",
         Component: Registration
-      }
+      },
+      {
+        path: "/auth/login",
+        Component: Login
+      },
+
     ]
 
   }

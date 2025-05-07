@@ -12,7 +12,6 @@ import { Slide } from "react-awesome-reveal";
 const bannerPromise = fetch('/banner.json').then(res => res.json());
 const Banner = () => {
   const banner = use(bannerPromise);
-  console.log(banner);
   return (
     <div className='bg-secondary'>
 

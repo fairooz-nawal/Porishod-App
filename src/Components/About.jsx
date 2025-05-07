@@ -10,7 +10,7 @@ const About = () => {
             <div className='relative h-[600px] flex'>
                 <div className="w-full md:w-full lg:w-1/2">
                     <Slide direction="up">
-                        <img className='w-full h-[600px]' src={bg} alt="" srcset="" />
+                        <img className='w-full h-[600px]' src={bg} alt="" />
                     </Slide>
                 </div>
                 <div className="absolute left-2 right-2 top-[6%]  md:top-[10%] md:left-[5%] lg:top-[5%] lg:left-[40%]  bg-secondary text-white p-5 md:p-10 lg:p-20">
