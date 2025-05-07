@@ -5,8 +5,17 @@ import { useContext } from 'react';
 import { ContextAPI } from './AuthProvider';
 const Navbar = () => {
 
-    const { user } = useContext(ContextAPI);
+    const { user,signOutUser } = useContext(ContextAPI);
 
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+                console.log('Sign-out successful.');
+            })
+            .catch((error) => {
+               console.log(error);
+            });
+    }
     const link = <>
         <li><NavLink className={({ isActive }) =>
             isActive ? "bg-primary text-white hover:bg-yellow-400 ml-2 font-semibold" : "text-gray-300 hover:bg-yellow-600 hover:text-white ml-2 font-semibold"
@@ -54,7 +63,7 @@ const Navbar = () => {
                                 </div>
                                 <ul tabIndex={0} className="dropdown-content text-gray-800 font-xl font-semibold menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                                     <li><a>Balance: 10000 BDT</a></li>
-                                    <li><button onClick={}>Sign Out</button></li>
+                                    <li><button onClick={handleSignOut}>Sign Out</button></li>
                                 </ul>
                             </div>
                         </>
