@@ -1,28 +1,39 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ContextAPI } from '../Components/AuthProvider';
 
 const Registration = () => {
 
-    const { signUpUser} = useContext(ContextAPI);
-    const handleSubmitForm = (e) =>{
+    const { signUpUser } = useContext(ContextAPI);
+    const [error, setError] = useState('');
+    const handleSubmitForm = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.Photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        //creating new User
-        signUpUser(email, password)
-        .then((result) => {
-            const user = result.user;
-            console.log(user);
-          })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-           console.log("Error:", errorCode, errorMessage);
-          });
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
         
+        setError('');
+        if (passwordRegex.test(password)) {
+            //creating new User
+            signUpUser(email, password)
+                .then((result) => {
+                    const user = result.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setError("Error:", errorCode, errorMessage);
+                });
+        }
+        else
+        {
+              setError('Password must be at least 6 characters long and contain at least one uppercase letter.')
+        }
+
+
     }
     return (
         <div className='bg-secondary'>
@@ -45,6 +56,8 @@ const Registration = () => {
                             <button className="btn bg-primary hover:bg-amber-500 text-white mt-4">Register</button>
                         </form>
                     </div>
+
+                   {error && <p className='text-red-500 text bold'>{error}</p>}
                 </div>
             </div>
         </div>
