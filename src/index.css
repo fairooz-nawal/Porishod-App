@@ -10,6 +10,7 @@
     --color-secondary: #0d3642;
     --color-base-100: #F5F5F5;
     --color-base-200: #FFFFFF;
+    --color-form:rgba(240, 248, 255, 0.481);
   
 
     --color-accent-content: oklch(98% 0.01 160);
@@ -24,3 +25,5 @@
     --color-error: oklch(65% 0.3 30);
     --color-error-content: oklch(98% 0.01 30); 
   }
+
+  
