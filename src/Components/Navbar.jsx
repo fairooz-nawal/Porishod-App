@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from '../assets/logo2.jpg'
+import { useContext } from 'react';
+import { ContextAPI } from './AuthProvider';
 const Navbar = () => {
+    const {name} = useContext(ContextAPI);
+    console.log(name)
     const link = <>
         <li><NavLink className={({ isActive }) =>
             isActive ? "bg-primary text-white hover:bg-yellow-400 ml-2 font-semibold" : "text-gray-300 hover:bg-yellow-600 hover:text-white ml-2 font-semibold"

@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ContextAPI } from '../Components/AuthProvider';
 
 const Registration = () => {
 
+    const { signUpUser} = useContext(ContextAPI);
     const handleSubmitForm = (e) =>{
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.Photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const newUser = {name,photo,email,password};
-        console.log(newUser);
+
+        //creating new User
+        signUpUser(email, password)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+          })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+           console.log("Error:", errorCode, errorMessage);
+          });
+        
     }
     return (
         <div className='bg-secondary'>
