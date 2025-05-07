@@ -4,9 +4,9 @@ import logo from '../assets/logo2.jpg'
 import { useContext } from 'react';
 import { ContextAPI } from './AuthProvider';
 const Navbar = () => {
-    
-    const { user} = useContext(ContextAPI);
-    
+
+    const { user } = useContext(ContextAPI);
+
     const link = <>
         <li><NavLink className={({ isActive }) =>
             isActive ? "bg-primary text-white hover:bg-yellow-400 ml-2 font-semibold" : "text-gray-300 hover:bg-yellow-600 hover:text-white ml-2 font-semibold"
@@ -31,12 +31,12 @@ const Navbar = () => {
                         {link}
                     </ul>
                 </div>
-                <div className="flex gap-2 items-center border-2 border-primary rounded-2xl p-2"> 
-                    <img className='w-[40px] h-[40px] hidden md:block lg:block object-cover rounded-full overflow-hidden' src={logo} alt="" /> 
+                <div className="flex gap-2 items-center border-2 border-primary rounded-2xl p-2">
+                    <img className='w-[40px] h-[40px] hidden md:block lg:block object-cover rounded-full overflow-hidden' src={logo} alt="" />
                     <span className='font-bold text-3xl md:text-2xl lg:text-2xl text-gray-300'>PORISHOD</span>
                 </div>
 
-                
+
 
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -46,16 +46,24 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
-                { user ? 
-                    <>
-                        <button><img className='w-[60px] h-[60px] object-cover rounded-full overflow-hidden' src={user?.photoURL} alt="" /></button>
-                    </>
-                    :
-                    <>
-                        <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/login">Login</Link>
-                        <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/register">Registration</Link>
-                    </>
-                    } 
+                    {user ?
+                        <>
+                            <div className="dropdown dropdown-bottom dropdown-end">
+                                <div tabIndex={0} role="button" className=" ">
+                                    <img className='w-[60px] h-[60px] object-cover rounded-full overflow-hidden' src={user?.photoURL} alt="" />
+                                </div>
+                                <ul tabIndex={0} className="dropdown-content text-gray-800 font-xl font-semibold menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                                    <li><a>Balance: 10000 BDT</a></li>
+                                    <li><button onClick={}>Sign Out</button></li>
+                                </ul>
+                            </div>
+                        </>
+                        :
+                        <>
+                            <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/login">Login</Link>
+                            <Link className="btn btn-outline btn-warning hover:bg-primary " to="/auth/register">Registration</Link>
+                        </>
+                    }
                 </div>
             </div>
         </div>

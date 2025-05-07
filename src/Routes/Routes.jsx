@@ -9,6 +9,7 @@ import Bill from '../Pages/Bill';
 import AuthLayout from '../Layout/AuthLayout';
 import Registration from '../Pages/Registration';
 import Login from '../Pages/Login';
+import ProtectedRoute from '../Components/ProtectedRoute';
 
 export const router = createBrowserRouter([
   {
@@ -22,11 +23,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        Component: Profile
+        element:<ProtectedRoute><Profile/></ProtectedRoute>
       },
       {
         path: "/bill",
-        Component: Bill
+        element:<ProtectedRoute><Bill/></ProtectedRoute>
       }
     ]
   },
