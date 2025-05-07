@@ -10,6 +10,7 @@ import AuthLayout from '../Layout/AuthLayout';
 import Registration from '../Pages/Registration';
 import Login from '../Pages/Login';
 import ProtectedRoute from '../Components/ProtectedRoute';
+import BIllDetail from '../Pages/BIllDetail';
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: "/bill",
         element:<ProtectedRoute><Bill/></ProtectedRoute>
+      },
+      {
+        path: "/bill/:id",
+        element:<ProtectedRoute><BIllDetail></BIllDetail></ProtectedRoute>
       }
     ]
   },
