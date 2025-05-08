@@ -9,7 +9,7 @@ const Profile = () => {
             <div className="grid grid-cols-1">
                 <div className=" space-y-4">
                     <div className="relative">
-                        <img className='w-full md:w-[200px] lg:w-[200px] mx-auto rounded-2xl border-2 border-gray-400' src={user?.photoURL} alt="" />
+                        <img className='w-[100px] md:w-[200px] lg:w-[200px] mx-auto rounded-2xl border-2 border-gray-400' src={user?.photoURL} alt="" />
                     </div>
                 </div>
                 <div className="text-start space-y-6">

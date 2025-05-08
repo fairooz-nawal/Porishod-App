@@ -8,7 +8,6 @@ const Login = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
     const handleSubmitFormLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
