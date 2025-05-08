@@ -6,8 +6,9 @@ import { GoogleAuthProvider } from "firebase/auth";
 
 export const ContextAPI = createContext('');
 const AuthProvider = ({children}) => {
-
+   
     const [user, setUser] = useState(null);
+    const [amount, setAmount] = useState(10000);
     const provider = new GoogleAuthProvider();
 
     const signUpUser = (email, password) => {
@@ -39,12 +40,18 @@ const AuthProvider = ({children}) => {
         };
       }, []); 
 
+    const handleAmount = (paybill) => {
+      const remaining = amount - paybill;
+      setAmount(remaining);
+      }
     const Auth ={
        signUpUser,
        signUpWithGoogle,
        signInUser,
        user,
-       signOutUser
+       signOutUser,
+       handleAmount,
+       amount
     }
    
     return (

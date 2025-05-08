@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { ContextAPI } from './AuthProvider';
 const Navbar = () => {
 
-    const { user,signOutUser } = useContext(ContextAPI);
+    const { user, signOutUser, amount } = useContext(ContextAPI);
 
     const handleSignOut = () => {
         signOutUser()
@@ -62,7 +62,7 @@ const Navbar = () => {
                                     <img className='w-[60px] h-[60px] object-cover rounded-full overflow-hidden' src={user?.photoURL} alt="" />
                                 </div>
                                 <ul tabIndex={0} className="dropdown-content text-gray-800 font-xl font-semibold menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                                    <li><a>Balance: 10000 BDT</a></li>
+                                    <li><a>Balance: {amount} BDT</a></li>
                                     <li><button onClick={handleSignOut}>Sign Out</button></li>
                                 </ul>
                             </div>

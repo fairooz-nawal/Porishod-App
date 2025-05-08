@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { use } from 'react';
 import { useParams } from 'react-router';
+import { ContextAPI } from '../Components/AuthProvider';
 
 const billPromise = fetch('/bill.json').then(res => res.json());
 const BIllDetail = () => {
+    const {handleAmount} = useContext(ContextAPI);
     const bill = use(billPromise);
     const billId = useParams();
     const singleBill = bill.find(bill => bill.id == billId.id);
@@ -13,14 +15,17 @@ const BIllDetail = () => {
             <h1 className='text-gray-200 text-4xl font-bold mb-10'>Details of the Bill</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 ">
                 <div className="">
-                    <img className='w-3/4 mx-auto rounded-2xl border-2 border-gray-400' src={singleBill.icon} alt="" />
+                    <div className="relative">
+                        <img className='w-3/4 mx-auto rounded-2xl border-2 border-gray-400' src={singleBill.logo} alt="" />
+                        <img className='bg-white absolute right-15 bottom-0 w-[20%] h-[45%] mx-auto rounded-2xl border-2 border-gray-400' src={singleBill.icon} alt="" />
+                    </div>
                 </div>
                 <div className="text-start space-y-4">
                     <h1 className='text-gray-200 text-2xl font-bold'>{singleBill.organization}</h1>
                     <h1 className='text-gray-200 text-2xl '>{singleBill.bill_type}</h1>
                     <h1 className='text-gray-200 text-2xl '>Bill Amount: {singleBill.amount} taka</h1>
-                    <h1 className='text-gray-200 text-2xl '>Due Date:{singleBill.duedate}</h1>
-                    <button className=' w-full btn btn-primary'>Pay Now</button>
+                    <h1 className='text-gray-200 text-2xl '>Due Date: {singleBill.duedate}</h1>
+                    <button onClick={() => handleAmount(singleBill.amount)} className=' w-full btn btn-primary'>Pay Now</button>
                 </div>
             </div>
 

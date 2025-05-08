@@ -13,7 +13,7 @@ const Bill = () => {
                     bills.map(bill =>
                         <div key={bill.id} className="w-full grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 p-5 space-y-4 border-2 border-gray-500 rounded-2xl mb-5 bg-secondary">
                             <div className="md:col-span-2 lg:col-span-2">
-                                <img className='w-full rounded-2xl border-2 border-gray-400' src={bill.icon} alt="" />
+                                <img className='w-full rounded-2xl border-2 border-gray-400' src={bill.logo} alt="" />
                             </div>
                             <div className="md:col-span-3 lg:col-span-4 flex justify-between p-5">
                                 <div className=" text-start">
