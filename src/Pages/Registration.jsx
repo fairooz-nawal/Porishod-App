@@ -1,20 +1,20 @@
 import React, { useContext, useState } from 'react';
 import { ContextAPI } from '../Components/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 const Registration = () => {
 
     const { signUpUser, signUpWithGoogle } = useContext(ContextAPI);
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
     const handleSubmitForm = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.Photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
         
         setError('');
@@ -34,7 +34,7 @@ const Registration = () => {
                         progress: undefined,
                         theme: "light",
                         });
-                    navigate('/');
+                        navigate(location?.state || '/');
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -75,7 +75,7 @@ const Registration = () => {
                     progress: undefined,
                     theme: "light",
                     });
-                navigate('/');
+                navigate(location?.state || '/');
             })
             .catch((error) => {
                 const errorMessage = error.message;

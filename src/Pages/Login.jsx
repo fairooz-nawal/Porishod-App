@@ -1,17 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { ContextAPI } from '../Components/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 const Login = () => {
     const { signInUser, signUpWithGoogle } = useContext(ContextAPI);
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
     const handleSubmitFormLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
 
         setError('');
@@ -31,7 +32,7 @@ const Login = () => {
                         progress: undefined,
                         theme: "light",
                     });
-                    navigate('/');
+                    navigate(location?.state || '/');
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -71,7 +72,7 @@ const Login = () => {
                     progress: undefined,
                     theme: "light",
                 });
-                navigate('/');
+                navigate(location?.state || '/');
             })
             .catch((error) => {
                 const errorMessage = error.message;
