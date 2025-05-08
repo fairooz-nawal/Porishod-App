@@ -18,7 +18,7 @@ const UpdateUser = () => {
                     setUser({ ...user, displayName: name, photoURL: photo});
                   })
                   .catch((error) => {
-                    console.log(error);
+                    // console.log(error);
                     setUser(user);
                   });
             toast.success('Profile Updated Successfully!!', {

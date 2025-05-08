@@ -17,8 +17,6 @@ const ProtectedRoute = ({ children }) => {
         return <Navigate state={location?.pathname} to="/auth/login"></Navigate>
     }
 
-
-
     return (
         <div>
             {children}

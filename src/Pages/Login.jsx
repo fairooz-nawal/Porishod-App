@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { ContextAPI } from '../Components/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link,  useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 const Login = () => {
     const { signInUser, signUpWithGoogle } = useContext(ContextAPI);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+    // console.log(location)
     const handleSubmitFormLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -20,7 +21,7 @@ const Login = () => {
             signInUser(email, password)
                 .then((result) => {
                     const user = result.user;
-                    console.log(user);
+                    // console.log(user);
                     toast.success('Login Done Successfully!!', {
                         position: "top-right",
                         autoClose: 5000,
@@ -60,7 +61,7 @@ const Login = () => {
         signUpWithGoogle()
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
                 toast.success('Login Done Successfully!!', {
                     position: "top-right",
                     autoClose: 5000,
@@ -88,6 +89,10 @@ const Login = () => {
                 navigate('/auth/login');
             });
     }
+
+    const registrationLocation = () => {
+        navigate('/auth/register', { state: location.state });
+    }
     return (
         <div className='bg-secondary'>
             <ToastContainer />
@@ -103,7 +108,7 @@ const Login = () => {
                             <label className="label text-lg ">Password</label>
                             <input type="password" className="input text-black" name="password" placeholder="Password" /><br /><br />
                             <Link>Forgot password?</Link><br />
-                            <div>Haven't registered yet? <Link className='btn bg-primary text-white font-semibold p-5' to="/auth/register">Register Now</Link></div>
+                            <div>Haven't registered yet? <button onClick={registrationLocation} className='btn bg-primary text-white font-semibold p-5' to="/auth/register">Register Now</button></div>
                             <button className="btn bg-primary hover:bg-amber-500 text-white mt-4">Login</button><br />
                             <button onClick={handleGoogleSignIn} className="btn bg-white hover:bg-amber-500 text-gray-700 mt-4"><FcGoogle></FcGoogle> Sign in with Google </button>
                         </form>

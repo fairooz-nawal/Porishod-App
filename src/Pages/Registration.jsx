@@ -5,10 +5,11 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 const Registration = () => {
 
-    const { signUpUser, signUpWithGoogle, updateUser} = useContext(ContextAPI);
+    const { signUpUser, signUpWithGoogle, updateUser,setUser} = useContext(ContextAPI);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+    // console.log("this is registration",location);
     const handleSubmitForm = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -25,7 +26,15 @@ const Registration = () => {
             signUpUser(email, password)
                 .then((result) => {
                     const user = result.user;
-                    console.log(user);
+                    // console.log(user);
+                    updateUser({displayName: name, photoURL: photo})
+                    .then(() => {
+                           setUser({ ...user, displayName: name, photoURL: photo});
+                         })
+                         .catch((error) => {
+                        //    console.log(error);
+                           setUser(user);
+                         });
 
                     //success message
                     toast.success('Registration Done Successfully!!', {
@@ -68,7 +77,7 @@ const Registration = () => {
         signUpWithGoogle()
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
                 toast.success('Registration Done Successfully!!', {
                     position: "top-right",
                     autoClose: 5000,
