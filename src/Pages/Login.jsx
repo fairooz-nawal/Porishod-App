@@ -3,11 +3,13 @@ import { ContextAPI } from '../Components/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link,  useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
+import { useRef } from 'react';
 const Login = () => {
-    const { signInUser, signUpWithGoogle } = useContext(ContextAPI);
+    const { signInUser, signUpWithGoogle,resetPassword } = useContext(ContextAPI);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+    const emailref = useRef();
     // console.log(location)
     const handleSubmitFormLogin = (e) => {
         e.preventDefault();
@@ -93,6 +95,40 @@ const Login = () => {
     const registrationLocation = () => {
         navigate('/auth/register', { state: location.state });
     }
+
+    const handleForgetPassword = () =>{
+        const email = emailref.current.value;
+        console.log(email)
+        resetPassword(email)
+        .then(() => {
+            toast.success('Email is sent', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            toast.error("something wrong", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            // ..
+          });
+
+    }
     return (
         <div className='bg-secondary'>
             <ToastContainer />
@@ -104,10 +140,10 @@ const Login = () => {
                     <div className="card-body">
                         <form onSubmit={handleSubmitFormLogin}>
                             <label className="label text-lg ">Email</label>
-                            <input type="email" className="input text-black" name="email" placeholder="Enter YourEmail" />
+                            <input type="email" className="input text-black" name="email" ref = {emailref} placeholder="Enter YourEmail" />
                             <label className="label text-lg ">Password</label>
                             <input type="password" className="input text-black" name="password" placeholder="Password" /><br /><br />
-                            <Link>Forgot password?</Link><br />
+                            <Link onClick = {handleForgetPassword} className='btn'>Forgot password?</Link><br />
                             <div>Haven't registered yet? <button onClick={registrationLocation} className='btn bg-primary text-white font-semibold p-5' to="/auth/register">Register Now</button></div>
                             <button className="btn bg-primary hover:bg-amber-500 text-white mt-4">Login</button><br />
                             <button onClick={handleGoogleSignIn} className="btn bg-white hover:bg-amber-500 text-gray-700 mt-4"><FcGoogle></FcGoogle> Sign in with Google </button>
