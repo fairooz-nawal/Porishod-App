@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { use } from 'react';
 import { Link } from 'react-router';
+import { ContextAPI } from '../Components/AuthProvider';
+import { IoCheckmarkDoneCircle } from "react-icons/io5";
 
 const billPromise = fetch('/bill.json').then(res => res.json())
 const Bill = () => {
     const bills = use(billPromise);
+    const { paid } = useContext(ContextAPI);
+    console.log(paid);
+
     return (
         <div className='max-w-full md:max-w-5xl lg:max-w-7xl mx-auto p-4 text-center py-[100px] md:py-[100px] lg:py-[100px] '>
             <h1 className='text-gray-800 text-2xl md:text-3xl lg:text-5xl font-bold'>Total Bills</h1><br /><br />
+
             <div className="grid grid-cols-1 ">
                 {
                     bills.map(bill =>
@@ -21,6 +27,11 @@ const Bill = () => {
                                     <p className='text-gray-200  font-bold'>Organization: {bill.organization}</p>
                                 </div>
                                 <Link to={`/bill/${bill.id}`} className='btn btn-primary'>Pay Now</Link>
+                                {paid.includes(bill.id) && (
+                                    <span className='text-3xl text-green-500'>
+                                        <IoCheckmarkDoneCircle />
+                                    </span>
+                                )}
                             </div>
                         </div>)
                 }
@@ -29,4 +40,4 @@ const Bill = () => {
     );
 };
 
-export default Bill;
+export default Bill; 
