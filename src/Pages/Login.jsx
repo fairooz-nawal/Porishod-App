@@ -113,7 +113,7 @@ const Login = () => {
             });
           })
           .catch((error) => {
-            const errorCode = error.code;
+           
             const errorMessage = error.message;
             toast.error("something wrong", {
                 position: "top-right",
