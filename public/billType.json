@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "type": "Electricity"
+    },
+    {
+      "id": 2,
+      "type": "Water"
+    },
+    {
+      "id": 3,
+      "type": "Internet"
+    },
+    {
+      "id": 4,
+      "type": "Gas"
+    },
+    {
+      "id": 5,
+      "type": "Rent"
+    }
+  ]

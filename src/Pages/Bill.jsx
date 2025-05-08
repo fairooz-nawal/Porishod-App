@@ -1,18 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { use } from 'react';
 import { Link } from 'react-router';
 import { ContextAPI } from '../Components/AuthProvider';
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 
 const billPromise = fetch('/bill.json').then(res => res.json())
+const billTypePromise = fetch('/billType.json').then(res => res.json())
+
 const Bill = () => {
     const bills = use(billPromise);
+    const billtype = use(billTypePromise);
     const { paid } = useContext(ContextAPI);
+
+    useEffect(() => {
+        const filteredBIlls = bills.filter(bill => bill.bill_type == billtype.type);
+    }, [paid])
+
     
+
     return (
         <div className='max-w-full md:max-w-5xl lg:max-w-7xl mx-auto p-4 text-center py-[100px] md:py-[100px] lg:py-[100px] '>
             <h1 className='text-gray-800 text-2xl md:text-3xl lg:text-5xl font-bold'>Total Bills</h1><br /><br />
-
+            <details className="dropdown mb-5">
+                <summary className="btn m-1 bg-primary text-white ">Sellect Bill Type</summary>
+                <ul className="text-gray-900 bg-base-200 menu dropdown-content rounded-box z-1 w-52 p-2 shadow-sm">
+                <li className='hover:bg-primary hover:text-white p-2 text-start' >All Bills</li>
+                  {billtype.map(billtype => <li key={billtype.id} className='hover:bg-primary hover:text-white p-2 text-start' >{billtype.type}</li>)}  
+                </ul>
+            </details>
             <div className="grid grid-cols-1 ">
                 {
                     bills.map(bill =>
