@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const provider = new GoogleAuthProvider();
 
+  console.log(user);
   const signUpUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)
@@ -26,7 +27,7 @@ const AuthProvider = ({ children }) => {
   }
 
   const signOutUser = () => {
-    setLoading(true);
+    setLoading(false);
     return signOut(auth);
   }
 
@@ -41,7 +42,8 @@ const AuthProvider = ({ children }) => {
         setUser(currentUser);
         setLoading(false);
       } else {
-        setUser(null)
+        setUser(null);
+        setLoading(false);
       }
     });
     return () => {
@@ -63,7 +65,7 @@ const AuthProvider = ({ children }) => {
     handleAmount,
     paid, setPaid,
     updateUser,
-    loading
+    loading,setLoading
   }
 
   return (

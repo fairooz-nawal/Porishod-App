@@ -33,7 +33,7 @@ const Banner = () => {
                 <div className="max-w-full md:max-w-5xl lg:max-w-7xl mx-auto p-5 gap-4 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 py-[50px] md:py-[100px] lg:py-[100px]">
                  
                     <div className="col-span-3 ">
-                      <div className="w-full md:w-9/12 lg:w-9/12 space-y-4 text-start ">
+                      <div className="w-full md:w-9/12 lg:w-9/12 space-y-4 text-start mt-10">
                       <Slide direction="left">
                         <h1 className='text-gray-200 text-2xl md:text-3xl lg:text-5xl font-bold'>{banner.title}</h1>
                         <p className='text-gray-200'>{banner.description}</p>
