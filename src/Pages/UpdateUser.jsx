@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ContextAPI } from '../Components/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
-import { Link, useLocation, useNavigate } from 'react-router';
-import { FcGoogle } from "react-icons/fc";
+import {  useLocation, useNavigate } from 'react-router';
 
 const UpdateUser = () => {
     const { updateUser,user,setUser} = useContext(ContextAPI);
