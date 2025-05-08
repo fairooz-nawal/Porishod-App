@@ -8,8 +8,7 @@ const billPromise = fetch('/bill.json').then(res => res.json())
 const Bill = () => {
     const bills = use(billPromise);
     const { paid } = useContext(ContextAPI);
-    console.log(paid);
-
+    
     return (
         <div className='max-w-full md:max-w-5xl lg:max-w-7xl mx-auto p-4 text-center py-[100px] md:py-[100px] lg:py-[100px] '>
             <h1 className='text-gray-800 text-2xl md:text-3xl lg:text-5xl font-bold'>Total Bills</h1><br /><br />

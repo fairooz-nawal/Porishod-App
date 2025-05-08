@@ -37,7 +37,7 @@ const BIllDetail = () => {
                     <h1 className='text-gray-200 text-2xl '>{singleBill.bill_type}</h1>
                     <h1 className='text-gray-200 text-2xl '>Bill Amount: {singleBill.amount} taka</h1>
                     <h1 className='text-gray-200 text-2xl '>Due Date: {singleBill.duedate}</h1>
-                    <button onClick={() => handleAmount(singleBill.amount, singleBill.id)} className={`w-full btn btn-primary`}>Pay Now</button>
+                    <button disabled={paid.includes(singleBill.id) && (true)} onClick={() => handleAmount(singleBill.amount, singleBill.id)} className={`w-full btn btn-primary`}>Pay Now</button>
                 </div>
             </div>
 
