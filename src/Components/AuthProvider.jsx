@@ -31,7 +31,6 @@ const AuthProvider = ({ children }) => {
   }
 
   const updateUser = (userDetail) => {
-    setLoading(true);
     return updateProfile(auth.currentUser, userDetail)
   }
 
@@ -43,7 +42,6 @@ const AuthProvider = ({ children }) => {
         setLoading(false);
       } else {
         setUser(null)
-        setLoading(true);
       }
     });
     return () => {
@@ -64,7 +62,8 @@ const AuthProvider = ({ children }) => {
     setAmount, amount,
     handleAmount,
     paid, setPaid,
-    updateUser
+    updateUser,
+    loading
   }
 
   return (

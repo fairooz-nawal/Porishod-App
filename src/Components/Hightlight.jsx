@@ -1,5 +1,4 @@
 import React from 'react';
-import { Slide } from "react-awesome-reveal";
 import CountUp from 'react-countup';
 import { RiCustomerServiceFill } from "react-icons/ri";
 import { IoHappyOutline } from "react-icons/io5";
@@ -15,72 +14,28 @@ const Hightlight = () => {
                     <div className="w-[90px] h-[90px] bg-white rounded-full flex items-center justify-center mx-auto"><RiCustomerServiceFill className='text-7xl text-primary ' /></div>
                     <p className=' text-2xl font-bold '>Total Sevices</p>
                     <div className="space-y-4">
-                        <h1 className=' text-2xl md:text-3xl lg:text-5xl font-bold '><CountUp
-                            start={0}
-                            end={108}
-                            duration={5.75}
-                        >
-                            {({ countUpRef, start }) => (
-                                <div>
-                                    <span ref={countUpRef} />
-                                    <button onClick={start}>+</button>
-                                </div>
-                            )}
-                        </CountUp></h1>
+                        <h1 className=' text-2xl md:text-3xl lg:text-5xl font-bold '>108+</h1>
                     </div>
                 </div>
                 <div className="space-y-4 shadow-2xl rounded-2xl bg-primary text-gray-100  p-4 hover:bg-white hover:text-primary lg:p-10">
                     <div className="w-[90px] h-[90px] bg-white rounded-full flex items-center justify-center mx-auto"><IoHappyOutline className='text-5xl text-primary font-bold' /></div>
                     <p className=' text-2xl font-bold '>Happy Customers</p>
                     <div className="space-y-4">
-                        <h1 className=' text-2xl md:text-3xl lg:text-5xl font-bold'><CountUp
-                            start={0}
-                            end={20000}
-                            duration={2.75}
-                        >
-                            {({ countUpRef, start }) => (
-                                <div>
-                                    <span ref={countUpRef} />
-                                    <button onClick={start}>+</button>
-                                </div>
-                            )}
-                        </CountUp></h1>
+                        <h1 className=' text-2xl md:text-3xl lg:text-5xl font-bold'>20000+</h1>
                     </div>
                 </div>
                 <div className="space-y-4 shadow-2xl rounded-2xl bg-primary text-gray-100  p-4 hover:bg-white hover:text-primary lg:p-10">
                     <div className="w-[90px] h-[90px] bg-white rounded-full flex items-center justify-center mx-auto"><FaRegUser className='text-5xl text-primary' /></div>
                     <p className=' text-2xl font-bold '>Total Employees</p>
                     <div className="space-y-4">
-                        <h1 className=' text-2xl md:text-3xl lg:text-5xl font-bold'><CountUp
-                            start={0}
-                            end={500}
-                            duration={4.75}
-                        >
-                            {({ countUpRef, start }) => (
-                                <div>
-                                    <span ref={countUpRef} />
-                                    <button onClick={start}>+</button>
-                                </div>
-                            )}
-                        </CountUp></h1>
+                        <h1 className=' text-2xl md:text-3xl lg:text-5xl font-bold'>500+</h1>
                     </div>
                 </div>
                 <div className="space-y-4 shadow-2xl rounded-2xl bg-primary text-gray-100  p-4 hover:bg-white hover:text-primary lg:p-10">
                     <div className="w-[90px] h-[90px] bg-white rounded-full flex items-center justify-center mx-auto"><FaRegCompass className='text-5xl text-primary' /></div>
                     <p className=' text-2xl font-bold '>Total Partners</p>
                     <div className="space-y-4">
-                        <h1 className=' text-2xl md:text-3xl lg:text-5xl font-bold'><CountUp
-                            start={0}
-                            end={100}
-                            duration={5.75}
-                        >
-                            {({ countUpRef, start }) => (
-                                <div>
-                                    <span ref={countUpRef} />
-                                    <button onClick={start}>+</button>
-                                </div>
-                            )}
-                        </CountUp></h1>
+                        <h1 className=' text-2xl md:text-3xl lg:text-5xl font-bold'>100+</h1>
                     </div>
                 </div>
             </div>

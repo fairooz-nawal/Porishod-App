@@ -11,6 +11,7 @@ const ProtectedRoute = ({children}) => {
             <span className="loading loading-bars loading-xl"></span>
         </div>
     }
+
     if(!user){
         return <Navigate state={location?.pathname} to="/auth/login"></Navigate>
     }

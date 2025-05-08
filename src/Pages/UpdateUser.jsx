@@ -45,9 +45,9 @@ const UpdateUser = () => {
                            <div className="card-body">
                                <form onSubmit={handleSubmitForm}>
                                    <label className="label text-lg ">Name</label>
-                                   <input type="text" className="input text-black" name="name" placeholder="Enter Your Full name" />
+                                   <input type="text" className="input text-black" name="name" defaultValue={user.displayName} placeholder="Enter Your Full name" />
                                    <label className="label text-lg ">Photo URL</label>
-                                   <input type="text" className="input text-black" name="Photo" placeholder="Enter Your Photo" />
+                                   <input type="text" className="input text-black" name="Photo" defaultValue={user.photoURL} placeholder="Enter Your Photo" />
                                    
                                    <button className="btn bg-primary hover:bg-amber-500 text-white mt-4">Update Profile</button><br />        
                                </form>
