@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ContextAPI } from '../Components/AuthProvider';
+import { Link } from 'react-router';
 
 const Profile = () => {
     const { user } = useContext(ContextAPI);
@@ -15,7 +16,7 @@ const Profile = () => {
                 <div className="text-start space-y-6">
                     <h1 className='text-gray-200 text-2xl font-bold'>Name: {user?.displayName}</h1>
                     <h1 className='text-gray-200 text-2xl '> Email: {user?.email}</h1>
-                    <button  className="w-full btn btn-primary">Update Profile</button>
+                    <Link to="/auth/update"><button  className="w-full btn btn-primary">Update Profile</button></Link>
                 </div>
             </div>
 

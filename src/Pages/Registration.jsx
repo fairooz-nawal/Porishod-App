@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 const Registration = () => {
 
-    const { signUpUser, signUpWithGoogle } = useContext(ContextAPI);
+    const { signUpUser, signUpWithGoogle, updateUser} = useContext(ContextAPI);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
@@ -16,6 +16,8 @@ const Registration = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        const userDetails = { displayName: name, photoURL: photo };
+        updateUser(userDetails);
         
         setError('');
         if (passwordRegex.test(password)) {
@@ -24,6 +26,8 @@ const Registration = () => {
                 .then((result) => {
                     const user = result.user;
                     console.log(user);
+
+                    //success message
                     toast.success('Registration Done Successfully!!', {
                         position: "top-right",
                         autoClose: 5000,
