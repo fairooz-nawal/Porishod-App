@@ -3,7 +3,7 @@
 Porishod is a comprehensive Bill Management website designed to simplify utility bill payments. Users can manage and pay their utility bills (like electricity, gas, water, internet, and more) conveniently. The application is built using modern web technologies and provides a seamless user experience, including authentication, profile management, and bill tracking.
 
 
-# Live URL:https://porishod-syeda-fairooz-nawal.netlify.app/profile
+# Live URL: https://porishod-syeda-fairooz-nawal.netlify.app/
 
 # Features
 
